@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- Create a module for working with DOM. -->
+    <meta charset="UTF-8">
+    <title> Dom Module Test Page</title>
+    <script src="lib/jquery-2.1.1.min.js" ></script>
+    <script src="scripts/dom-module.js"></script>
+</head>
+<body id="container" >
+    <h1> change global variables appendElementsCount and bufferSize to adjust li elements addition </h1>
+    <a class="button"> This is a link to be clicked </a>
+    <div id="wrapper" >
+        <a class="button"> This is a link to be clicked </a>
+        <div id="main-nav" >
+            <ul>
+                <li> First LI element </li>
+                <li> Second LI element </li>
+                <li> Third LI element </li>
+                <li> Fourth LI element </li>
+                <li> Fifth LI element </li>
+            </ul>
+        </div>
+
+        <a class="button"> This is a link to be clicked </a>
+    </div>
+<script>
+    var appendElementsCount = 102;
+    var bufferSize = 100;
+
+    window.onload = function () {
+        var $div = $('<div>').html("new div element");
+        var li = document.createElement("li"),
+            newLi;
+        $div.height(50);
+        $div.width(200);
+        $div.css("background", "yellow");
+        $div.css("text-align", "center");
+
+        //appends div to #wrapper
+        domModule.appendChild($div,"#wrapper");
+        //removes li:first-child from ul
+        domModule.removeChild("ul","li:first-child");
+        //add handler to each a element with class button
+        domModule.addHandler("a.button", 'click', function(){alert("Clicked")});
+
+        //add elements to buffer
+        for (var i = 0; i < appendElementsCount; i++) {
+            newLi = li.cloneNode(true);
+            newLi.innerHTML = i;
+            domModule.appendToBuffer("#main-nav ul", newLi);
+        }
+
+    }
+</script>
+</body>
+</html>

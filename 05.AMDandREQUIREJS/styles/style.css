@@ -1,0 +1,20 @@
+body {
+    margin: 5px;
+    padding: 5px;
+    background-color: darkgrey;
+}
+
+.person-item {
+    width:20%;
+    height:100%;
+    border:3px solid blue;
+    display:none;
+}
+
+.person-item:hover {
+    background-color: greenyellow;
+}
+
+.person-item.selected {
+    display:block !important;
+}

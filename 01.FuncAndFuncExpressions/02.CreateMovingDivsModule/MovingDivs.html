@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- Create a module that works with moving div nodes. -->
+    <meta charset="UTF-8">
+    <title> Module for moving divs </title>
+    <style>
+        #danceFloor {
+            width: 800px;
+            height: 500px;
+            background: lightgrey;
+            border: 1px solid black;
+            border-radius: 10px;;
+        }
+    </style>
+    <script src="scripts/moving-divs-module.js"></script>
+</head>
+<body>
+    <h1>Click on the window to add div with selected shape </h1>
+    <label for="rect">Rect</label>
+    <input type="radio" name="shape" value="rect" id="rect" checked="checked"/>
+    <label for="ellipse">Ellipse</label>
+    <input type="radio" name="shape" value="ellipse" id="ellipse"/>
+    <div id="danceFloor"></div>
+<script>
+    var danceFloor = document.getElementById("danceFloor");
+
+    danceFloor.addEventListener('click', function generateDiv(event) {
+        var top = danceFloor.offsetTop + danceFloor.offsetHeight /4;
+        var left = danceFloor.offsetLeft + danceFloor.offsetWidth /2;
+        if (event.target instanceof HTMLInputElement || event.target instanceof HTMLLabelElement) {
+            return false;
+        }
+
+        event.preventDefault();
+        var shape = document.getElementById('rect').checked ? 'rect' : 'ellipse';
+        movingShapes.add(shape, top, left, danceFloor);
+    })
+</script>
+</body>
+</html>

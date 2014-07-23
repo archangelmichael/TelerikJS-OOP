@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- Create a module to work with the console object. -->
+    <meta charset="UTF-8">
+    <title> Write a Console Module </title>
+    <script src="scripts/console-module.js" type="text/javascript"></script>
+</head>
+<body>
+    <script>
+        //log massage
+        specialConsole.writeLine("Message: hello");
+        //log massage with format
+        specialConsole.writeLine("Message: {0}", "hello");
+        //log error
+        specialConsole.writeError("Error: Something happened");
+        //log error with format
+        specialConsole.writeError("Error: {0}", "Something happened");
+        //log warning
+        specialConsole.writeWarning("Warning: A warning");
+        //log warning with format
+        specialConsole.writeWarning("Warning: {0}", "A warning");
+    </script>
+</body>
+</html>

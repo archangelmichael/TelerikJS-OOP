@@ -1,0 +1,17 @@
+body {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid blue;
+    background-color: darkgrey;
+}
+
+button:hover {
+    background-color: greenyellow;
+}
+
+#intro {
+    position: absolute;
+    top: 20%;
+    left: 300px;
+    width: 30%;
+}

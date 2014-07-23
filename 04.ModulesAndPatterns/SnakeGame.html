@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> The Snake Game </title>
+    <script src="scripts/libs/jquery-2.1.1.min.js" ></script>
+    <script src="scripts/libs/kinetic-v5.1.0.min.js" ></script>
+    <script src="scripts/snake.js"></script>
+    <script src="scripts/drawer.js"></script>
+    <script src="scripts/score.js"></script>
+    <script src="scripts/engine.js"></script>
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <h1> This is the snake game </h1>
+        <button id="game-start">Start Game</button>
+        <div>
+            <h2> Controls </h2>
+            <p> Use Arrow Up to go Up </p>
+            <p> Use Arrow Down to go Down </p>
+            <p> Use Arrow Left to go Left </p>
+            <p> Use Arrow Right to go Right </p>
+            <p>Press P to "Pause" the game </p>
+        </div>
+        <img id="intro" src="images/SnakeGame.png"/>
+    </div>
+    <script>
+        document.getElementById('game-start').addEventListener('click', Engine('container').startGame);
+    </script>
+</body>
+</html>
